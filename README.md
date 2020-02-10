@@ -13,7 +13,6 @@ using namespace Linqp;
 
 To be able to instantiate the LinqPlus class you should  call the from function
 ```
-cpp
 
 Vector<int> *vector = new Vector<int> { 1, 2, 3, 45, 6, 7, 8, 91, 12, 4, 1, 2 };
 
@@ -24,6 +23,8 @@ auto foundHigher = from(vec).Any([](int x){ return x > 50.0 ; });
 //to read a bmp image onto a color Vector
 std::string imagePath ="image.bmp";
 auto image = from(imagePath,0).ToColorVector();
+//to read file's bytes
+auto byteVector = from(imagePath,2).ReadAllBytes().ToVector();
 
 ```
 
