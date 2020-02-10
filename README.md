@@ -4,7 +4,8 @@ A Single C++ header file that contains some of the functions that are allowed by
 # Usage
 
 the header and namespace should be included
-```#include "LinqPlus.h"
+```
+#include "LinqPlus.h"
 
 using namespace Linqp;
 
