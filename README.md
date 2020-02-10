@@ -29,7 +29,7 @@ auto byteVector = from(imagePath,2).ReadAllBytes().ToVector();
 ```
 # Limitations
 
-For now I have only implemented how to read images using Bitmaps(.bmp) under Windows through GDIPlus API and Colors Could be output only as a std::vector<Color>
+For now I have only implemented how to read images using Bitmaps(.bmp) under Windows through GDIPlus API and Colors Could be output only as a `std::vector<Color>`
 
 
 # Credit
