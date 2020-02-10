@@ -4,7 +4,8 @@ A Single C++ header file that contains some of the functions that are used in C#
 # Usage
 
 the header and namespace should be included
-```
+```cpp
+
 #include "LinqPlus.h"
 
 using namespace Linqp;
@@ -12,7 +13,7 @@ using namespace Linqp;
 ```
 
 To be able to instantiate the LinqPlus class you should  call the from function
-```
+```cpp
 
 Vector<int> *vector = new Vector<int> { 1, 2, 3, 45, 6, 7, 8, 91, 12, 4, 1, 2 };
 
