@@ -59,7 +59,7 @@ namespace Linqp
 		Read=3,
 	};
 #pragma endregion
-
+/*
 	template<typename T>
 	class Array_t
 	{
@@ -243,7 +243,7 @@ namespace Linqp
 
 	template<typename T>
 	Array_t<T>* Array_t<T>::Begin = nullptr;
-
+*/
 
 #pragma region ColorClass
 #ifdef WIN32
