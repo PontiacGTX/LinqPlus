@@ -31,4 +31,4 @@ auto byteVector = from(imagePath,2).ReadAllBytes().ToVector();
 
 
 # Credit
-I would like to thank to melak47's contribution for part of the debugging and troubleshooting of this project.
+I would like to thank to melak47 for the contribution to this project.
