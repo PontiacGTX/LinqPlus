@@ -25,4 +25,4 @@ auto foundHigher = from(vec).Any([](int x){ return x > 50.0 ; });
 
 
 # Credit
-I would like to thank to melak47's contribution for part of the debbugging and troubleshooting of this project.
+I would like to thank to melak47's contribution for part of the debugging and troubleshooting of this project.
