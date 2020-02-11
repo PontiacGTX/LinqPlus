@@ -29,6 +29,7 @@
 #pragma endregion 
 
 #pragma region DefineSection
+#define var auto
 #define Template template
 #define Vector std::vector 
 #define Map std::map
