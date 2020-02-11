@@ -30,7 +30,7 @@ auto byteVector = from(imagePath,2).ReadAllBytes().ToVector();
 ```
 # Limitations
 
-For now I have only implemented how to read images using Bitmaps(.bmp) under Windows through GDIPlus API and Colors Could be output only as a `std::vector<Color>` taking 32 bit A-(RGB) bitmap images
+For now I have only implemented how to read images using Bitmaps(.bmp) under Windows through GDIPlus API and Colors Could be output only as a `std::vector<Linqp::Color>` taking 32 bit A-(RGB) bitmap images
 
 It requires that the user manages the heap allocated container assigned by either of the To{stdcontainer}() functions
 
