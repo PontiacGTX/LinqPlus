@@ -758,6 +758,23 @@ namespace Linqp
 
 			}, Length);
 		}
+		template<typename Function_t>
+		inline auto Avg(Function_t func)
+		{
+			Iterator it = BeginPtr;
+			using Type = typename std::invoke_result<decltype(func), decltype(*it)>::type;
+			Type total = 0;
+			unsigned long long length = 0;
+			while (it < EndPtr)
+			{
+				total +=std::invoke(func,*it);
+				length++;
+				it++;
+			}
+
+			total /= length;
+			return total;
+		}
 		inline T Avg()
 		{
 			T total = 0;
@@ -1492,6 +1509,11 @@ namespace Linqp
 		{
 			return FindIn(funct,Length);
 		}
+		template<typename Function_t>
+		inline auto Average(Function_t func)
+		{
+			return Avg(func);
+		}	
 		inline auto Average()
 		{
 			return  Avg();
