@@ -29,9 +29,7 @@
 #pragma endregion 
 
 #pragma region DefineSection
-#define var auto
 #define Template template
-#define sFunction std::function
 #define Vector std::vector 
 #define Map std::map
 #define Stack std::stack
@@ -307,7 +305,7 @@ namespace Linqp
 		
 		std::function<bool(void)> deleteContainer;
 		std::function<bool(void)> deleteauxContainer;
-		sFunction<void(Iterator, Iterator)>  funct;
+		std::function<void(Iterator, Iterator)>  funct;
 		static unsigned long long Length;
 		static unsigned long long SecondLength;
 		Iterator BeginPtr;
@@ -851,7 +849,7 @@ namespace Linqp
 			}
 
 		}
-		LinqPlus(Iterator first,Iterator second, sFunction<void(Iterator, Iterator)> function)
+		LinqPlus(Iterator first,Iterator second, std::function<void(Iterator, Iterator)> function)
 		{
 			Datatype = 0;
 			funct = function;
@@ -935,7 +933,7 @@ namespace Linqp
 			EndPtr = second;
 			Length = length;
 		};
-		LinqPlus(Iterator first, Iterator second, const unsigned long long& length, sFunction<void(Iterator, Iterator)>  function)
+		LinqPlus(Iterator first, Iterator second, const unsigned long long& length,  std::function<void(Iterator, Iterator)>  function)
 		{
 			funct = function;
 			BeginPtr = first;
