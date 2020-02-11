@@ -369,7 +369,14 @@ namespace Linqp
 				}
 				it++;
 			}
+		        if (deleteContainer)
+			    deleteContainer();
 
+			deleteContainer = [vec]()
+			{
+				delete vec;
+				return true;
+			};	
 			using IteratorT = typename std::vector<T>::const_iterator;
 			IteratorT begin = vec->cbegin();
 			IteratorT end = vec->cend();
