@@ -356,6 +356,30 @@ namespace Linqp
 
 			}, Length);
 		}
+		template<typename Function_t>
+		inline auto All(Function_t funct)
+		{
+			Iterator it = BeginPtr;
+			Vector<T>* vec = new Vector<T>();
+			while (it < EndPtr)
+			{
+				if (std::invoke(funct, *it))
+				{
+					vec->push_back(*it);
+				}
+				it++;
+			}
+
+			using IteratorT = typename std::vector<T>::const_iterator;
+			IteratorT begin = vec->cbegin();
+			IteratorT end = vec->cend();
+			return LinqPlus<IteratorT, T>(vec->cbegin(), vec->cend(), deleteContainer, [this, &begin, &end](IteratorT first, IteratorT second)
+			{
+				if (first == second)
+					throw std::exception("Out of Range");
+
+			}, vec.size());
+		}	
 		inline auto GetRange(unsigned long long begin, unsigned long long count)
 		{
 			Vector<T>* vec = new Vector<T>((BeginPtr) + begin,BeginPtr+(begin+count));
@@ -667,6 +691,13 @@ namespace Linqp
 
 			},length);
 		}
+			
+		template<typename Function_t>
+		inline auto GetAll(Function_t funct)
+		{
+			return All(funct);
+		}	
+			
 		template<typename Function_t>
 		inline auto OrderContainer(Function_t predicate)
 		{
