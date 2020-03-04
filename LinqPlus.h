@@ -338,7 +338,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 
 			
@@ -374,7 +374,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};	
 			using IteratorT = typename std::vector<T>::const_iterator;
 			IteratorT begin = vec->cbegin();
@@ -420,7 +420,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 
 			Iterator beg = vec->cbegin();
@@ -442,7 +442,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 
 			std::reverse(vec->begin(),vec->end());
@@ -488,7 +488,7 @@ namespace Linqp
 			deleteContainer = [newVec]()
 			{
 				delete newVec;
-				return true;
+				return newVec->size()==0;
 			};
 			
 			return LinqPlus<IteratorT, Type>(newVec->cbegin(), newVec->cend(),deleteContainer,  [](IteratorT first, IteratorT second)
@@ -593,7 +593,7 @@ namespace Linqp
 					deleteContainer = [vect]()
 					{
 						delete vect;
-						return true;
+						return vect->size()==0;
 					};
 
 					using IteratorT = typename std::vector<Type>::const_iterator;
@@ -643,7 +643,7 @@ namespace Linqp
 					deleteContainer = [vect]()
 					{
 						delete vect;
-						return true;
+						return vect->size()==0;
 					};
 
 					using IteratorT = typename std::vector<Type>::const_iterator;
@@ -740,7 +740,7 @@ namespace Linqp
 			deleteContainer = [newVec]()
 			{
 				delete newVec;
-				return true;
+				return newVec->size()==0;
 			};
 			using IteratorT = typename std::vector<T>::const_iterator;
 			IteratorT bgin = newVec->cbegin();
@@ -764,7 +764,7 @@ namespace Linqp
 			deleteContainer = [newVec]()
 			{
 				delete newVec;
-				return true;
+				return newVec->size()==0;
 			};
 			using IteratorT = typename std::vector<T>::const_iterator;
 			IteratorT bgin = newVec->cbegin();
@@ -806,6 +806,12 @@ namespace Linqp
 			}
 			if (deleteContainer)
 				deleteContainer();
+			
+			deleteContainer= [vec]()
+			{
+				delete vec;
+				return vec->size()==0;
+			};
 
 			Iterator bgin = vec->cbegin();
 			Iterator end = vec->cend();
@@ -941,7 +947,7 @@ namespace Linqp
 			BeginPtr = first;
 			EndPtr = second;
 		}
-	    LinqPlus(Iterator first,Iterator second,unsigned long long& length )
+	        LinqPlus(Iterator first,Iterator second,unsigned long long& length )
 		{
 			funct = [](Iterator it,Iterator it1) { };
 			BeginPtr = first;
@@ -1122,7 +1128,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1156,7 +1162,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 
 			Iterator bgin = vec->cbegin();
@@ -1187,7 +1193,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1218,7 +1224,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};		
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1249,7 +1255,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1280,7 +1286,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1311,7 +1317,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1342,7 +1348,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1373,7 +1379,7 @@ namespace Linqp
 			deleteContainer = []()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1404,7 +1410,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1435,7 +1441,7 @@ namespace Linqp
 			deleteContainer = []()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1466,7 +1472,7 @@ namespace Linqp
 			deleteContainer = [vec]()
 			{
 				delete vec;
-				return true;
+				return vec->size()==0;
 			};
 			Iterator bgin = vec->cbegin();
 			Iterator endit = vec->cend();
@@ -1648,7 +1654,7 @@ namespace Linqp
 			deleteContainer = [content]()
 			{
 				delete content;
-				return true;
+				return content->size()==0;
 			};
 
 			using IteratorT = std::string::iterator;
@@ -1690,7 +1696,7 @@ namespace Linqp
 				deleteContainer = [bytes]()
 				{
 					delete bytes;
-					return true;
+					return bytes->size()==0;
 				};
 				bytes->shrink_to_fit();
 				Length = bytes->size();
