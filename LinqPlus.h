@@ -386,6 +386,28 @@ namespace Linqp
 
 			}, vec.size());
 		}	
+			
+		template<typename Tt>
+		inline std::string ToStringIn(Tt item)
+		{
+			std::stringstream ss;
+			ss << item;
+			return ss.str();
+		}
+
+		inline auto ToStr()
+		{
+			std::string str;
+
+			Iterator begin = BeginPtr;
+			while (begin != EndPtr)
+			{
+				str += ToStringIn(*begin);
+				begin++;
+			}
+			return str;
+		}	
+			
 		inline auto GetRange(unsigned long long begin, unsigned long long count)
 		{
 			Vector<T>* vec = new Vector<T>((BeginPtr) + begin,BeginPtr+(begin+count));
@@ -1456,8 +1478,13 @@ namespace Linqp
 			}, Length);
 
 		}
+			
+		inline auto ToString()
+		{
+	            return ToStr();
+		}
 
-
+		
 		Template<typename Type,typename ...Args>
 		inline auto Append(const Type val, const Args&...arg)
 		{
