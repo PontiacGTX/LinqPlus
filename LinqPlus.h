@@ -1724,7 +1724,7 @@ namespace Linqp
 #ifdef WIN32
 		inline auto ToColorVector()
 		{
-			if (Datatype == (int)Data::BMP)
+			if (Datatype == (int)Data::BMP || (int)Data::Image)
 			{
 				var vecColor = new Vector<Color>();
 
@@ -2095,7 +2095,7 @@ namespace Linqp
 	{
 		return from(str.begin(), str.end());
 	}
-	auto from(std::string s,const int opt)
+	auto from(std::string s,const int opt,bool file)
 	{
 		switch (opt)
 		{
