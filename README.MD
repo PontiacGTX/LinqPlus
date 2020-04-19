@@ -23,7 +23,7 @@ auto vec = from(result).Distinct().ToVector();
 auto foundHigher = from(vec).Any([](int x){ return x > 50.0 ; });
 //to read a bmp image onto a color Vector
 std::string imagePath ="image.bmp";
-auto imagePixels = from(imagePath,0,true).ToColorVector();
+auto imagePixels = from(imagePath,Data::Image,true).ToColorVector();
 //to read file's bytes
 auto byteVector = from(imagePath,2,true).ReadAllBytes().ToVector();
 
