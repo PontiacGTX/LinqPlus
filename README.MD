@@ -27,6 +27,14 @@ auto imagePixels = from(imagePath,0).ToColorVector();
 //to read file's bytes
 auto byteVector = from(imagePath,2).ReadAllBytes().ToVector();
 
+std::vector < std::string > strvec;
+strvec.push_back("d");
+strvec.push_back("c");
+strvec.push_back("b");
+strvec.push_back("a");
+
+auto result = from(vec).OrderBy([](const std::string& lhs, std::string& rhs) {return lhs < rhs; }).ToVector();
+
 ```
 # Limitations
 
