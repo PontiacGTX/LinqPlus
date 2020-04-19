@@ -33,7 +33,7 @@ strvec.push_back("c");
 strvec.push_back("b");
 strvec.push_back("a");
 
-auto result = from(vec).OrderBy([](const std::string& lhs, std::string& rhs) {return lhs < rhs; }).ToVector();
+auto result = from(STRvec).OrderBy([](const std::string& lhs, std::string& rhs) {return lhs < rhs; }).ToVector();
 
 ```
 # Limitations
