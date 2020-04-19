@@ -23,9 +23,9 @@ auto vec = from(result).Distinct().ToVector();
 auto foundHigher = from(vec).Any([](int x){ return x > 50.0 ; });
 //to read a bmp image onto a color Vector
 std::string imagePath ="image.bmp";
-auto imagePixels = from(imagePath,0).ToColorVector();
+auto imagePixels = from(imagePath,0,true).ToColorVector();
 //to read file's bytes
-auto byteVector = from(imagePath,2).ReadAllBytes().ToVector();
+auto byteVector = from(imagePath,2,true).ReadAllBytes().ToVector();
 
 std::vector < std::string > strvec;
 strvec.push_back("d");
@@ -38,7 +38,6 @@ auto result = from(vec).OrderBy([](const std::string& lhs, std::string& rhs) {re
 ```
 # Limitations
 
-For now I have only implemented how to read images using Bitmaps(.bmp) under Windows through GDIPlus API and Colors Could be output only as a `std::vector<Linqp::Color>` taking 32 bit A-(RGB) bitmap images
 
 It requires that the user manages the heap allocated container assigned by either of the To{stdcontainer}() functions
 
