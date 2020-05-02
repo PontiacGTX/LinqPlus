@@ -24,7 +24,7 @@ auto result = from(vector).Where([](int x) { return x >40;}).Select([](int x) { 
 auto vec = from(result).Distinct().ToVector();
 
 //check if exist any double higher than 50.0 in the vec std::vector<double>
-auto foundHigher = from(vec).Any([](int x){ return x > 50.0 ; });
+auto foundHigher = from(vec).Any([](double x){ return x > 50.0 ; });
 
 //to read a bmp image onto a color Vector
 std::string imagePath ="image.bmp";
